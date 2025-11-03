@@ -30,7 +30,7 @@ function Login() {
       if (remember) localStorage.setItem("savedUsername", username);
       else localStorage.removeItem("savedUsername");
 
-      // Aquí se conectaría al backend con fetch/axios
+      // Aquí se conectaría al backend con fetch/axios después
       // fetch("/api/login", { method: "POST", body: JSON.stringify({ username, password }) })
 
       window.location.href = "/home"; // Redirige a página home

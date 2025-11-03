@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Style.css";
+
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -12,10 +12,10 @@ function ForgotPassword() {
       return;
     }
 
-    // Simulación de envío de correo
+    // Simulación de como aparecería luego del envío de correo
     alert(`📧 Se ha enviado un correo con instrucciones a: ${email}`);
 
-    // Aquí se conectaría al backend
+    // Aquí se conectaría al backend después 
     // fetch("/api/forgot-password", { method: "POST", body: JSON.stringify({ email }) })
 
     // Redirige al login después de enviar

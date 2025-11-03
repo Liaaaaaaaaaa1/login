@@ -15,13 +15,13 @@ function Register() {
       return;
     }
 
-    // Guardar usuario temporalmente en localStorage
+    // Se guarda el suario temporalmente en localStorage
     const user = { username, email, password };
     localStorage.setItem("registeredUser", JSON.stringify(user));
 
     alert("✅ Registro exitoso. Ahora puedes iniciar sesión.");
     
-    // Aquí se conectaría al backend con fetch/axios
+    // Aquí se conectaría al backend con fetch/axios 
     // fetch("/api/register", { method: "POST", body: JSON.stringify(user) })
 
     window.location.href = "/login";
