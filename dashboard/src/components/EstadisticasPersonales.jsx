@@ -22,10 +22,8 @@ const EstadisticasPersonales = () => {
   // Cálculos principales
   const juegosCompletados = juegos.filter(j => j.completado).length;
   const juegosPorCompletar = juegos.length - juegosCompletados;
-  const porcentajeCompletados = juegos.length ? (juegosCompletados / juegos.length) * 100 : 0;
 
   const totalHoras = reseñas.reduce((acc, r) => acc + r.horasJugadas, 0);
-  const promedioHoras = reseñas.length ? totalHoras / reseñas.length : 0;
 
   const dificultadCounts = reseñas.reduce((acc, r) => {
     acc[r.dificultad] = (acc[r.dificultad] || 0) + 1;
@@ -74,11 +72,20 @@ const EstadisticasPersonales = () => {
       <h2>Estadísticas Personales</h2>
 
       <div className="estadisticas-principales">
-        <p>Juegos completados: {juegosCompletados} ({porcentajeCompletados.toFixed(1)}%)</p>
-        <p>Juegos por completar: {juegosPorCompletar}</p>
-        <p>Total de horas jugadas: {totalHoras}</p>
-        <p>Promedio de horas por juego: {promedioHoras.toFixed(1)}</p>
-      </div>
+  <div className="tarjeta">
+    <h3>Juegos completados</h3>
+    <p>{juegosCompletados}</p>
+  </div>
+  <div className="tarjeta">
+    <h3>Juegos por completar</h3>
+    <p>{juegosPorCompletar}</p>
+  </div>
+  <div className="tarjeta">
+    <h3>Total de horas jugadas</h3>
+    <p>{totalHoras}</p>
+  </div>
+</div>
+
 
       <div className="estadisticas-dificultad">
         <h3>Dificultad de los juegos:</h3>
@@ -109,3 +116,4 @@ const EstadisticasPersonales = () => {
 };
 
 export default EstadisticasPersonales;
+

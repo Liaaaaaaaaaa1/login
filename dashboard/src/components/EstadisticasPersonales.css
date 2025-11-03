@@ -38,3 +38,31 @@
   background-color: #8884d8;
   color: white;
 }
+
+.estadisticas-principales {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tarjeta {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  text-align: center;
+}
+
+.tarjeta h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #444;
+}
+
+.tarjeta p {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 5px 0 0;
+}
