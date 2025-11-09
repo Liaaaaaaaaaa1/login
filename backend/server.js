@@ -1,29 +1,25 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js"; // importa tus rutas de autenticación
 
-dotenv.config();
-
 const app = express();
-const PORT = process.env.PORT || 5000; // Render asigna automáticamente el puerto
+const PORT = 5000;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
-// Rutas principales
-app.use("/api/auth", authRoutes); // /api/auth/login, /api/auth/register, /api/auth/forgot-password, etc.
+// Rutas
+app.use("/api/auth", authRoutes); // todas las rutas de login y registro estarán bajo /api/auth
 
-// Ruta de prueba rápida
+// Ruta de prueba
 app.get("/", (req, res) => {
   res.send("Backend corriendo ✅");
 });
 
-// Conexión a MongoDB Atlas desde .env
-const mongoURI = process.env.MONGO_URI;
-
+// Conexión a MongoDB
+const mongoURI = "mongodb+srv://liagr0207_db_user:G8qLc9Dth2KzKOqW@cluster0.cbasltb.mongodb.net/?appName=Cluster0"; // reemplaza con tu URI de Atlas, incluyendo usuario y contraseña
 mongoose.connect(mongoURI)
   .then(() => console.log("MongoDB conectado ✅"))
   .catch((err) => console.error("Error al conectar MongoDB:", err));
